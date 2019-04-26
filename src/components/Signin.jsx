@@ -32,13 +32,13 @@ class Signin extends Component {
     login(username, password).then((res) => this.checkLogin(res, username));
   }
   checkLogin(res, username) {
-    //if user is valid..
-    if (res.message === 'ok') {
-      sessionStorage.setItem('role', res.role);
-      sessionStorage.setItem('iduser', res.id);
-      sessionStorage.setItem('username', username);
-      this.props.history.push("/home");
-    }
+   //if user is valid..
+   if (res.message === 'ok') {
+     sessionStorage.setItem('role', res.role);
+     sessionStorage.setItem('iduser', res.id);
+     sessionStorage.setItem('username', username);
+     this.props.history.push("/home");
+   }
     //else, show error message...
     else {
       this.setState({
